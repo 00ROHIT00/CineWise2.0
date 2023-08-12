@@ -1,12 +1,15 @@
 *
 {
     margin : 0;
-    padding : 0;
+    padding : 0;                     /*DEFUALT SETTINGS*/
     box-sizing: border-box;
 }
 body{
-    color : white;
+    color :#e3d1d1;            
 } 
+span{
+    color :##e3d1d1;
+}
 
 .container
 {
@@ -14,25 +17,27 @@ body{
     display : grid;
     place-items: center;
     font-size : 33px;
-    background-image: linear-gradient(45deg, #0F2027,#142931,#19313B,#1E3A46,#224250,#274B5A,#2C5364);
+    /* background-image: linear-gradient(45deg, #0F2027,#142931,#19313B,#1E3A46,#224250,#274B5A,#2C5364); */ /*GRADIENT*/
+    background-color : rgba(0,0,0,0.4);
     background-size : 400% 400%;
     animation: gradient 5s ease infinite;
 }
-@keyframes gradient {
+/* @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
 	50% {
-		background-position: 100% 50%;
+		background-position: 100% 50%;  /*GRADIENT ANIMATION
 	}
 	100% {
 		background-position: 0% 50%;
 	}
-}
+} */
 
-#CW
+.cw 
 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 10px;
 }
 .box
 {
@@ -42,16 +47,41 @@ body{
 
 .searchBar
 {
-    color : black;
+    color : white;
+    background-color : transparent;
     position: absolute;
     top : 370px;
+    left : 450px;
     width : 440px;
     height : 40px;
     border-radius: 15px;
     padding-left : 15px;
-    border : greyblack 2px solid;
+    border : #979797 2px solid;
     box-shadow: -6px 10px 15px -3px #0F2027;
     margin : 0 auto;
+}
+input[type="text"]::placeholder
+{
+    text-align: center;
+    font-size : 19px;
+}
+#searchBtn
+{
+    width: 43px;
+    height : 40px;
+    position: absolute;
+    top : 370px;
+    left: 895px;
+    border: 2px #979797 solid;
+    background: transparent;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    padding : 5px;
+    font-size: 30px;
+    cursor : pointer;
 }
 
 .image
@@ -60,4 +90,33 @@ body{
     width : 55px;
     position: absolute;
     top : 200px;
+}
+
+.bgClip
+{
+    position: fixed;
+    right : 0;
+    bottom : 0;
+    z-index: -1;
+}
+
+#arrow{
+    position: absolute;
+    bottom: 20px;
+    font-size: 28px;
+    color: #979797;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+
+#arrow:hover{
+ color: white;
+ transform: scale(105%);
+ -webkit-transform: scale(105%);
+ -moz-transform: scale(105%);
+ -ms-transform: scale(105%);
+ -o-transform: scale(105%);
 }
