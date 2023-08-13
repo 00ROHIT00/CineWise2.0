@@ -1,18 +1,15 @@
 *
 {
     margin : 0;
-    padding : 0;                     /*DEFUALT SETTINGS*/
+    padding : 0;                     
     box-sizing: border-box;
-    scrollbar-width : none;
+    scrollbar-width: none;
 }
--webkit-scrollbar
-{
-    display : none;
+html{
+    scroll-behavior: smooth;
 }
-
 body{
-    color :#e3d1d1;            
-    scroll-behavior: smooth !important;
+    color :#e3d1d1;         
 } 
 .container
 {
@@ -20,13 +17,37 @@ body{
     display : grid;
     place-items: center;
     font-size : 33px;
-    background-color : rgba(0,0,0,0.6);  /*OPACITY SETTINGS*/
+    background-color : rgba(0,0,0,0.6); 
 }
 .cw   /*CineWise Heading*/
 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Kanit', sans-serif;
     letter-spacing: 10px;
-    margin : 0 auto;
+    margin: 0 auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(90deg ,#BBD2C5,#A1B8B1,#879E9E,#6D838A,#536976);
+    background-size: 400% 400%;
+    animation: headingAnimation 10s ease infinite;
+    -webkit-animation: headingAnimation 10s ease infinite;
+}
+@keyframes headingAnimation{
+    0% { 
+        background-position: 0 0;
+    }
+    25% { 
+        background-position: 100% 0;
+    }
+    50% { 
+        background-position: 100% 100%;
+    }
+    75% { 
+        background-position: 0 100%;
+    }
+    100% {  
+        background-position: 0 0;
+    }
 }
 .box  /*div containing the heading*/
 {
@@ -37,6 +58,7 @@ body{
 .searchBar  /*the search bar*/
 {
     color : white;
+    font-family: 'Roboto Slab', serif;
     background-color : transparent;
     position: absolute;
     top : 370px;

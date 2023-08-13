@@ -1,0 +1,8 @@
+Primary Font : 
+https://fonts.google.com/specimen/Kanit
+
+Secondary Font : 
+https://fonts.google.com/specimen/Roboto+Slab
+
+Accent :
+https://fonts.google.com/specimen/PT+Sans+Caption

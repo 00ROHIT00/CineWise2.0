@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineWise</title>
-    <link rel="stylesheet" href="./styles.css"> <!--Custom CSS File-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!DOCTYPE html>
+    <html lang="en">
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CineWise</title>
+        <link rel="stylesheet" href="./styles.css"> <!--Custom CSS File-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,700&display=swap" rel="stylesheet"> <!--GOOGLE FONTS-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--BOXICONS-->
-    <link rel="icon" type="images/x-icon" href="./assets/favicon.ico">    <!--FAVICON ICON-->
-</head>
-<body>
-    <section class="homePage">
-        <div class="container">
-            <div class="videoWrapper">
-                <video autoplay loop muted plays-inline class="bgClip"> <!--BACKGROUND VIDEO-->
-                    <source src="./assets/live.mp4" type="video/mp4">
-                    Browser Not Supported!
-                </video>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet"><!--GOOGLE FONTS-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--BOXICONS-->
+        <link rel="icon" type="images/x-icon" href="./assets/favicon.ico">    <!--FAVICON ICON-->
+    </head>
+    <body>
+        <section class="homePage">
+            <div class="container">
+                <div class="videoWrapper">
+                    <video autoplay loop muted plays-inline class="bgClip"> <!--BACKGROUND VIDEO-->
+                        <source src="./assets/live.mp4" type="video/mp4">
+                        Browser Not Supported!
+                    </video>
+                </div>
+                <div class="box"><H1 class="cw">CineWise</H1></div>
+                    <input type="text" placeholder="Search The Movie / Genre" class="searchBar">
+                    <a href="#secondPage"><i class='bx bxs-down-arrow' id="arrow" id="searchBtn"></i></a>
             </div>
-            <div class="box"><H1 class="cw">CineWise</H1></div>
-                <input type="text" placeholder="Search The Movie / Genre" class="searchBar">
-                <a href="#secondPage"><i class='bx bxs-down-arrow' id="arrow" id="searchBtn"></i></a>
-        </div>
-    </section>
-    <section class="secondPage" id="secondPage">
-        <div class="intro"><h1>How CineWise works ?</h1></div>
-    </section>
-</body>
-</html>
+        </section>
+        <section id="secondPage">
+            <div class="intro"><h1>How CineWise works ?</h1></div>
+        </section>
+    </body>
+    </html>
