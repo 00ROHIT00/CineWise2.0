@@ -34,6 +34,10 @@ body{
     background-size: 400% 400%;
     animation: headingAnimation 10s ease infinite;
     -webkit-animation: headingAnimation 10s ease infinite;
+    /*MAKING THE TEXT UNSELECTABLE*/
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 @keyframes headingAnimation{
     0% { 
@@ -60,26 +64,38 @@ body{
 
 .searchBar  /*the search bar*/
 {
-    color : white;
+    color: white;
     font-family: 'Roboto Slab', serif;
-    background-color : transparent;
+    background-color: transparent;
     position: absolute;
-    top : 370px;
-    margin : 0 auto;
-    width : 440px;
-    height : 40px;
+    top: 370px;
+    margin: 0 auto;
+    width: 440px;
+    height: 40px;
     border-radius: 15px;
-    padding-left : 15px;
-    border : #979797 2px solid;
+    padding-left: 15px;
+    border: #979797 2px solid;
     box-shadow: -6px 10px 15px -3px #0F2027;
-    margin : 0 auto;
+    margin: 0 auto;
+    transition: .5s ease-in-out ;
+    -webkit-transition: .5s ease-in-out ;
+    -moz-transition: .5s ease-in-out ;
+    -ms-transition: .5s ease-in-out ;
+    -o-transition: .5s ease-in-out ;
+    outline : none;
 }
 input[type="text"]::placeholder  /*aligning the text on the search bar*/
 {
     text-align: center;
     font-size : 19px;
 }
-
+.searchBar:hover{
+    transform: scale(105%);
+    -webkit-transform: scale(105%);
+    -moz-transform: scale(105%);
+    -ms-transform: scale(105%);
+    -o-transform: scale(105%);
+}
 .bgClip   /*the background video*/
 {
     position: fixed;
@@ -116,4 +132,6 @@ a {
 .intro {
     height : 100vh;
     background-color : rgba(0,0,0,0.6);  /*OPACITY SETTINGS*/
+    text-align: center;
+    padding-top: 15px;
 }
