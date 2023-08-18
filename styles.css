@@ -24,8 +24,7 @@ body{
 }
 .cw   /*CineWise Heading*/
 {
-    font-family: 'Kanit', sans-serif;
-    letter-spacing: 10px;
+    font-family: 'Bricolage Grotesque', sans-serif;
     margin: 0 auto;
     background-clip: text;
     -webkit-background-clip: text;
@@ -68,7 +67,7 @@ body{
     font-family: 'Roboto Slab', serif;
     background-color: transparent;
     position: absolute;
-    top: 370px;
+    top: 340px;
     margin: 0 auto;
     width: 440px;
     height: 40px;
@@ -134,4 +133,59 @@ a {
     background-color : rgba(0,0,0,0.6);  /*OPACITY SETTINGS*/
     text-align: center;
     padding-top: 15px;
+}
+
+
+/*SECOND PAGE*/
+.container2 {
+    height :100vh;
+    background-color : rgba(0,0,0,0.6); 
+}
+
+.cw2 {  
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size : 33px;
+    display : grid;
+    place-items: center;
+    padding-top : 15px;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(90deg ,#BBD2C5,#A1B8B1,#879E9E,#6D838A,#536976);
+    background-size: 400% 400%;
+    animation: headingAnimation 10s ease infinite;
+    -webkit-animation: headingAnimation 10s ease infinite;
+    /*MAKING THE TEXT UNSELECTABLE*/
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+  border-bottom: #979797 4px solid;
+}
+
+/* NAVBAR */
+.navbar {
+    font-family: 'Poppins', sans-serif;
+}
+nav ul {
+    display : flex;
+    justify-content: space-around;
+    list-style: none;
+     padding : 6px;
+    border-bottom: 4px #979797 solid;
+}
+
+nav a {
+    color: #979797;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+
+a:hover {
+    color : white;
+    text-decoration: underline;
 }
