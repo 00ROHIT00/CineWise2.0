@@ -185,7 +185,8 @@ nav a {
     -o-transition: .2s ease-in-out;
 }
 
-a:hover {
+a:hover 
+{
     color : white;
     text-decoration: underline;
 }
