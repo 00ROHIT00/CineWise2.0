@@ -3,77 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="images/x-icon" href="./Admin-assets/favicon.ico"> 
+  <link rel="icon" type="images/x-icon" href="./Admin-assets/favicon.ico">  <!--FAVICON-->
+  <link rel="stylesheet" href="./Admin-styles.css">
   <title>CineWise | Admin</title>
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap');
-    * {
-    margin : 0;
-    padding : 0;                     
-    box-sizing: border-box;
-      }
-
-      body {
-        background-color : #100c05;
-        font-family: 'Poppins', sans-serif;
-        color : #f6eee0;
-
-      }
-      header { 
-      display : grid;
-      place-items: center;
-      font-weight : 900;
-      font-size : 50px;
-}
-.container {
-  height : 250px;
-  display : flex;
-  justify-content: center;
-  align-items: center;
-  color : #f6eee0;
-}
-
-input[type="text"]::placeholder  /*aligning the text*/
-{
-    text-align: center;
-    font-size : 15px;
-}
-input[type="number"]::placeholder  /*aligning the text*/
-{
-    text-align: center;
-    font-size : 15px;
-}
-input {
-  letter-spacing: 3px;
-  font-family: 'Poppins', sans-serif;
-  outline : none;
-  border : #9db6e2 2px solid;
-  background : transparent;
-  color : #f6eee0;
-  width : 260px;
-  height : 50px;
-  margin-left: 15px;
-  margin-top : 5px;
-  padding-left: 10px;
-}
-
-#buttons {
-  margin-top : 15px;
-  transition: .5s ease-in-out;
-}
-.submit:hover  {
-  background-color : #27af49;
-  border-radius: 5px;
-}
-.reset:hover  {
-  background-color : #9f2323;
-  border-radius: 5px;
-}
-  </style>
 </head>
 <body>
   <header>ADMIN | CINEWISE</header>
   <main>
+    <div class="heading"><h1>Add A Movie</h1>
+    <h1>Remove A Movie</h1></div>
+   <div class="box">
     <div class="container">
       <form action="">
         <input type="text" placeholder="Movie Name" required></input>
@@ -84,6 +23,18 @@ input {
         <input type="reset" id="buttons" class="reset">
       </form>
     </div>
+    <div class="container2">
+      <form action="">
+        <input type="text" placeholder="Movie Name" required></input>
+        <input type="text" placeholder="Genre"> <br>
+        <input type="number" placeholder="Rating" min="1" max="10"></input>
+        <input type="number" placeholder="Release Year" required min="2022" max="2023"></input><br>
+        <input type="submit" id="buttons" class="submit">
+        <input type="reset" id="buttons" class="reset">
+      </form>
+    </div>
+   </div>
+    
   </main>
 </body>
 </html>
