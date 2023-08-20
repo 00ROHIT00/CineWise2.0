@@ -87,3 +87,13 @@ border : #9f2323 2px solid;
   font-size: 20px;
   border-top : 2px #65a9b3 solid;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
