@@ -37,6 +37,7 @@ border-top : 2px #65a9b3 solid;
 
 .container2 {
   width : 50%;
+
   display: grid;
   place-items: center;
   border-left : 2px #65a9b3 solid;
