@@ -26,7 +26,7 @@ body {
   /*Safari*/-ms-user-select: none;
   /*IE10andIE11*/user-select: none;
   /*Standardsyntax*//*border: lime 2px solid;
-  */:;
+  */
 }
 @keyframes headingAnimation{
   0% { 
