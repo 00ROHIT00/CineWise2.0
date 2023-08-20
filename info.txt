@@ -1,0 +1,5 @@
+Genre's : Action | Horror | Thriller | Sci-Fi | Adventure
+Sidhart : Action
+Ashwin : Thriller Sci-Fi
+Dhananjay : Adventure
+Rohit : Horror
