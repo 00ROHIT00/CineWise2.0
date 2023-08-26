@@ -3,3 +3,131 @@ Sidhart : Action
 Ashwin : Thriller Sci-Fi
 Dhananjay : Adventure
 Rohit : Horror
+
+
+
+Absolutely, let's break down how this process works step by step:
+
+1. **HTML Structure (`index.html`):**
+   - The HTML page (`index.html`) contains the visual elements that users interact with. It includes an input field where users can enter their search query (movie title) and a button to initiate the search.
+   - It also includes an empty `<ul>` (unordered list) element with an `id="resultsList"` where we will populate the search results.
+
+2. **JavaScript Event Listener:**
+   - The JavaScript code within the `<script>` tags listens for a click event on the "Search" button.
+   - When the button is clicked, the code reads the value of the search query from the input field and sends this query to the server for processing.
+
+3. **Server-Side Script (`search.php`):**
+   - When the user clicks the "Search" button, the JavaScript code constructs a URL that includes the search query as a parameter, like `search.php?query=movie_title`.
+   - The `search.php` script is responsible for handling this request. It connects to the MySQL database using the provided credentials.
+
+4. **Sanitizing Input:**
+   - Before using the search query in the SQL query, the script uses `mysqli_real_escape_string()` to sanitize the input. This helps prevent SQL injection attacks by escaping characters that could be malicious.
+
+5. **SQL Query:**
+   - The script then constructs an SQL query using the sanitized search query in a `LIKE` clause. This query searches for movie titles in the `movies` table that match the search query.
+
+6. **Database Query and Result Processing:**
+   - The script executes the SQL query using `mysqli_query()` and retrieves the results in the form of a result set.
+   - It then iterates through the result set using a loop and fetches each row (movie) as an associative array.
+
+7. **JSON Response:**
+   - The retrieved data (movies matching the search query) are stored in an array (`$data`) within the PHP script.
+   - The script then closes the database connection and uses `json_encode()` to convert the PHP array into a JSON-encoded string.
+
+8. **Client-Side Result Rendering (`index.html`):**
+   - Back on the client-side, in the JavaScript code, the response from the server is processed as JSON.
+   - The code then iterates through the JSON data and creates list items (`<li>`) for each movie title found in the search results.
+   - These list items are appended to the empty `<ul>` element in the HTML, populating the search results on the page.
+
+9. **User Interaction:**
+   - When the JavaScript code finishes populating the search results, users will see a list of movie titles that match their search query.
+   - Users can now see and interact with the search results directly on the webpage.
+
+10. **User Experience:**
+    - This process creates a smooth and dynamic user experience where users can search for movies and see real-time results without needing to refresh the page.
+
+In summary, the interaction between the HTML, JavaScript, PHP, and MySQL components allows users to enter a search query, send it to the server, retrieve relevant data from the database, and display the results on the webpage. The combination of these technologies enables a functional and user-friendly search feature on your CineWise website.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CineWise - Movie Search</title>
+</head>
+<body>
+    <h1>CineWise - Movie Search</h1>
+    <input type="text" id="searchQuery" placeholder="Enter movie title">
+    <button id="searchButton">Search</button>
+    <ul id="resultsList"></ul>
+
+    <script>
+        var searchButton = document.getElementById("searchButton");
+        var searchQuery = document.getElementById("searchQuery");
+        var resultsList = document.getElementById("resultsList");
+
+        searchButton.addEventListener("click", function() {
+            var query = searchQuery.value;
+            fetch('search.php?query=' + query)
+                .then(response => response.json())
+                .then(data => {
+                    resultsList.innerHTML = '';
+                    data.forEach(movie => {
+                        var listItem = document.createElement('li');
+                        listItem.textContent = movie.title; // Replace with actual column name
+                        resultsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
+
+
+
+<?php
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$query = $_GET['query'];
+$query = mysqli_real_escape_string($conn, $query); // Sanitize input
+
+$sql = "SELECT * FROM movies WHERE title LIKE '%$query%'";
+$result = mysqli_query($conn, $sql);
+
+$data = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $data[] = $row;
+}
+
+mysqli_close($conn);
+
+echo json_encode($data);
+?>
