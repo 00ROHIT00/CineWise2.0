@@ -64,7 +64,7 @@ body{
 .searchBar  /*the search bar*/
 {
     color: white;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Poppins', sans-serif;
     background-color: transparent;
     position: absolute;
     top: 340px;
@@ -94,6 +94,13 @@ input[type="text"]::placeholder  /*aligning the text on the search bar*/
     -moz-transform: scale(105%);
     -ms-transform: scale(105%);
     -o-transform: scale(105%);
+}
+
+
+#searchInput {
+    position: absolute;
+    left : 470px;
+    font-family: 'Poppins', sans-serif;
 }
 .bgClip   /*the background video*/
 {
@@ -127,7 +134,7 @@ a {
  -ms-transform: scale(105%);
  -o-transform: scale(105%);
 }
-
+/*SECOND PAGE*/
 .intro {
     height : 100vh;
     background-color : rgba(0,0,0,0.6);  /*OPACITY SETTINGS*/
@@ -135,8 +142,6 @@ a {
     padding-top: 15px;
 }
 
-
-/*SECOND PAGE*/
 .container2 {
     height :100vh;
     background-color : rgba(0,0,0,0.6); 

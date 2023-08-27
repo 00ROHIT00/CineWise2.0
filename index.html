@@ -22,7 +22,9 @@
                     </video>
                 </div>
                 <div class="box"><H1 class="cw">CineWise</H1></div>
-                    <input type="text" placeholder="Search The Movie / Genre" class="searchBar">
+                <form action="./php/search.php" method="post">
+                    <input type="text" placeholder="Search The Movie / Genre" class="searchBar" name="searchInput" id="searchInput" required>
+                </form>
                     <a href="#secondPage"><i class='bx bxs-down-arrow' id="arrow" id="searchBtn"></i></a>
             </div>
         </section>
