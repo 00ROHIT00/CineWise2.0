@@ -35,9 +35,8 @@ z-index: 1;
 border-top : 2px #65a9b3 solid;
 }
 
-.container2 {
+.container2 {   
   width : 50%;
-
   display: grid;
   place-items: center;
   border-left : 2px #65a9b3 solid;
@@ -90,5 +89,31 @@ border : #9f2323 2px solid;
 
 #removeAMovie {
   width : 538px;
+}
 
+.description {
+  width : 538px;
+  height : 85px;
+  font-size : 10px;
+}
+.description::placeholder {
+  font-size : 14px;
+}
+
+.link {
+  width : 538px;
+}
+
+#releaseYear {
+  /* Disable default arrow styles */
+  -moz-appearance: textfield; /* Firefox */
+}
+#releaseYear {
+  /* Disable default arrow styles */
+  -moz-appearance: textfield; /* Firefox */
+}
+#releaseYear::-webkit-outer-spin-button,
+#releaseYear::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

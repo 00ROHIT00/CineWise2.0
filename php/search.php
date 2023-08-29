@@ -33,7 +33,6 @@
     .box-container {
   border : 2px solid #a3c5db;
   width : 250px;
-  height : 250px;
   margin : 10px;
 }
 
@@ -113,12 +112,11 @@ if ($result->num_rows > 0) {
      echo '<div class="box-container">';
      echo '<H3 class="movie-title">'. ucwords($row['movieName']) .' ('. ucwords($row['genre']) .')</H3>';
 
-     echo '<p class="movie-description">The film follows a former CIA agent who learns how to manipulate the flow of time to prevent an attack from the future that threatens to annihilate the present world the the</p>';
+     echo '<p class="movie-description">'. ucfirst($row['description']) .'</p>';
 
      echo '<nav>';
      echo '<ul>';
-     echo '<li><a href="">Watch Now!</a></li>';
-     echo '<li><a href="">Cast</a></li>';
+     echo '<li><a href="'. $row['link'] .'" target="_blank">Watch Now!</a></li>';
      echo '</ul>';
      echo ' </nav>';
      echo '<div class="footer">';
