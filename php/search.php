@@ -16,6 +16,73 @@
       color : #f4f8fb;
       font-family: 'Poppins', sans-serif;
     }
+    .header{
+      display : grid;
+      place-items : center;
+      border-bottom : #f4f8fb 2px solid;
+      margin-bottom : 5px;
+    }
+
+    .container {
+      display : flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    /*MOVIE CARD STYLES*/
+    .box-container {
+  border : 2px solid #a3c5db;
+  width : 250px;
+  height : 250px;
+  margin : 10px;
+}
+
+.movie-title{
+  border-bottom : #4b8db9 1px solid;
+  display : grid;
+  place-items : center;
+  font-size : 20px;
+}
+
+.movie-description {
+  padding : 7px;
+  text-align : center;
+  border-bottom : #4b8db9 1px solid;
+  font-size : 13px;
+}
+
+nav ul {
+  display : flex;
+  justify-content : space-around;
+  list-style : none;
+  padding : 6px;
+  border-bottom : #4b8db9 1px solid;
+  font-size : 15px;
+}
+
+nav a {
+color : white;
+  text-decoration : none;
+  transition : .2s ease-in-out;
+}
+
+a:hover {
+  color : #a3c5db;
+}
+
+.rating {
+  padding-left : 5px;
+}
+
+.footer {
+  display : flex;
+  justify-content : space-between;
+  padding-left : 20px;
+  padding-right : 20px;
+  padding-top : 5px;
+  font-size : 15px;
+}
+/*MOVIE STYLES END*/
   </style>
 </head>
 <body>
@@ -42,12 +109,27 @@ $query = "SELECT * FROM moviedata WHERE movieName like '%$lowerCaseSearchInput%'
 $result = $conn->query($query);
 
 if ($result->num_rows > 0) {
-  echo "<ul>";
   while ($row = $result->fetch_assoc()) {
-     echo '';
-  }
-  echo "</ul>";
-} else {
+     echo '<div class="box-container">';
+     echo '<H3 class="movie-title">'. ucwords($row['movieName']) .' ('. ucwords($row['genre']) .')</H3>';
+
+     echo '<p class="movie-description">The film follows a former CIA agent who learns how to manipulate the flow of time to prevent an attack from the future that threatens to annihilate the present world the the</p>';
+
+     echo '<nav>';
+     echo '<ul>';
+     echo '<li><a href="">Watch Now!</a></li>';
+     echo '<li><a href="">Cast</a></li>';
+     echo '</ul>';
+     echo ' </nav>';
+     echo '<div class="footer">';
+     echo ' <p class="rating title">Rating <br>'. ucwords($row['rating']) .'</p>';
+     echo '<p class="release title">Release <br>'. ucwords($row['releaseYear']) .'</p>';
+     echo '  </div>';
+     echo '</div>';  
+} 
+
+}
+else {
   echo "No results found.";
 }
 
