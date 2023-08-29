@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Results</title>
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
     * {
       margin : 0;
       border : 0;
@@ -14,13 +14,7 @@
     body {
       background-color : #0c1216;
       color : #f4f8fb;
-    }
-
-    .header {
-      display : grid;
-      place-items : center;
-      font-size : 25px;
-      font-family: 'Roboto Slab', serif;
+      font-family: 'Poppins', sans-serif;
     }
   </style>
 </head>
@@ -50,7 +44,7 @@ $result = $conn->query($query);
 if ($result->num_rows > 0) {
   echo "<ul>";
   while ($row = $result->fetch_assoc()) {
-     echo "<li>{$row['movieName']} - Genre: {$row['genre']} - Rating: {$row['rating']}</li>";
+     echo '';
   }
   echo "</ul>";
 } else {

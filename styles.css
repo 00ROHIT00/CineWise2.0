@@ -88,14 +88,6 @@ input[type="text"]::placeholder  /*aligning the text on the search bar*/
     text-align: center;
     font-size : 19px;
 }
-.searchBar:hover{
-    transform: scale(105%);
-    -webkit-transform: scale(105%);
-    -moz-transform: scale(105%);
-    -ms-transform: scale(105%);
-    -o-transform: scale(105%);
-}
-
 
 #searchInput {
     position: absolute;
