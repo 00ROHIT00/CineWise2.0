@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Results</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--FA-->
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
     * {
@@ -81,12 +82,32 @@ a:hover {
   padding-top : 5px;
   font-size : 15px;
 }
+
+.arrow 
+{
+  position: absolute;
+  top : 7px;
+  left : 7px;
+  font-size : 25px;
+  transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+
+.arrow:hover {
+ transform : scale(110%);
+}
 /*MOVIE STYLES END*/
   </style>
 </head>
 <body>
  <div class="header">
-  <h1>Search Resuls</h1>
+  <h1>Search Resuls</h1> <br>
+ </div>
+ <div class="arrow">
+  <a href="http://localhost/CineWise2.0/index.html"> <i class="fa-solid fa-backward" style="color: #ffffff;"></i> </a>
  </div>
  <div class="container">
 <?php 

@@ -25,7 +25,10 @@ box-sizing: border-box;
   justify-content: space-around;
 }
 .container {
-height : 525px;
+height : 525px;         
+          /*1366x768res*/
+/* height : 624px;        */
+            /*1920x1080res*/
 display : flex;
 justify-content: center;
 align-items: center;
@@ -40,7 +43,8 @@ border-top : 2px #65a9b3 solid;
   display: grid;
   place-items: center;
   border-left : 2px #65a9b3 solid;
-border-top : 2px #65a9b3 solid;
+  border-top : 2px #65a9b3 solid;
+
 }
 
 input {
