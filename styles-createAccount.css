@@ -91,6 +91,17 @@ body {
   place-items: center;
 }
 
+a {
+  color : grey;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f6eee0;;
+  text-decoration: underline;
+}
+
+
 input {
   width : 350px;
   height : 40px;

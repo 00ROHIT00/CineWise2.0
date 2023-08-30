@@ -68,7 +68,6 @@ body{
     background-color: transparent;
     position: absolute;
     top: 340px;
-    margin: 0 auto;
     width: 440px;
     height: 40px;
     border-radius: 15px;
@@ -81,7 +80,8 @@ body{
     -moz-transition: .5s ease-in-out ;
     -ms-transition: .5s ease-in-out ;
     -o-transition: .5s ease-in-out ;
-    outline : none;
+     outline : none;
+     margin : auto 0;
 }
 input[type="text"]::placeholder  /*aligning the text on the search bar*/
 {
@@ -91,7 +91,7 @@ input[type="text"]::placeholder  /*aligning the text on the search bar*/
 
 #searchInput {
     position: absolute;
-    left : 470px;
+    left : 545px;
     font-family: 'Poppins', sans-serif;
 }
 .bgClip   /*the background video*/

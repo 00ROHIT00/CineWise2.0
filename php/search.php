@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Results</title>
+  <link rel="icon" type="images/x-icon" href="./assets/favicon.ico">    <!--FAVICON ICON-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--FA-->
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
@@ -43,6 +44,7 @@
   display : grid;
   place-items : center;
   font-size : 20px;
+  padding : 5px;
 }
 
 .movie-description {
@@ -100,6 +102,32 @@ a:hover {
 .arrow:hover {
  transform : scale(110%);
 }
+
+.watch-later {
+  background : transparent;
+  color : white;
+  font-size : 14px;
+  border : white 1px solid;
+  padding : 2px;
+  transition : .3s ease-in-out;
+}
+
+.watch-later:hover {
+  background-color : white;
+  color : black;
+  curson : grab;
+}
+
+.watch-now {
+  border : white 1px solid;
+  padding : 2px;
+  transition : .3s ease-in-out;
+  font-size : 14px;
+}
+.watch-now:hover {
+  background-color : white;
+  color : black;
+}
 /*MOVIE STYLES END*/
 
 /*NO RESULTS PAGE STYLES*/
@@ -115,11 +143,12 @@ span {
 color : red;
 }
 /*NO RESULTS PAGE END*/
+
   </style>
 </head>
 <body>
  <div class="header">
-  <h1>Search Resuls</h1> <br>
+  <h1>Search Results</h1> <br>
  </div>
  <div class="arrow">
   <a href="http://localhost/CineWise2.0/index.html"> <i class="fa-solid fa-backward" style="color: #ffffff;"></i> </a>
@@ -152,7 +181,8 @@ if ($result->num_rows > 0) {
 
      echo '<nav>';
      echo '<ul>';
-     echo '<li><a href="'. $row['link'] .'" target="_blank">Watch Now!</a></li>';
+     echo '<li><a href="'. $row['link'] .'" target="_blank" class="watch-now">Watch Trailer!</a></li>';
+     echo '<button class="watch-later">Watch Later!</button>';
      echo '</ul>';
      echo ' </nav>';
      echo '<div class="footer">';
@@ -160,7 +190,27 @@ if ($result->num_rows > 0) {
      echo '<p class="release title">Release <br>'. ucwords($row['releaseYear']) .'</p>';
      echo '  </div>';
      echo '</div>';  
-} 
+
+     echo '<script>';
+     echo 'document.addEventListener("DOMContentLoaded", function () {
+      const watchLaterButtons = document.querySelectorAll(".watch-later");';
+     echo 'watchLaterButtons.forEach(button => { button.addEventListener("click", addToWatchLater);});';
+     echo 'function addToWatchLater(event) {
+      event.preventDefault();';
+     echo 'const movieCard = event.target.closest(".box-container");';
+     echo 'const movieTitle = movieCard.querySelector(".movie-title").textContent;';
+     echo 'const movieData = {
+      title: movieTitle };';
+     echo 'let watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];';
+     echo 'watchLaterList.push(movieData);';
+     echo 'localStorage.setItem("watchLater", JSON.stringify(watchLaterList));';
+     echo 'alert("Movie added to Watch Later");';
+     echo 'button.removeEventListener("click", addToWatchLater);';
+     echo '}';
+     echo '});';
+     echo '</script>';
+}
+ 
 
 }
 else {
