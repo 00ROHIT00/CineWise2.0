@@ -11,6 +11,7 @@
       margin : 0;
       border : 0;
       box-sizing : border-box;
+      scrollbar-width : none;
     }
     body {
       background-color : #0c1216;
@@ -100,6 +101,20 @@ a:hover {
  transform : scale(110%);
 }
 /*MOVIE STYLES END*/
+
+/*NO RESULTS PAGE STYLES*/
+.error-container {
+  background-color : #0c1216;
+  color : white;
+  height : 100vh;
+  margin : 0 auto;
+  font-size : 30px;
+}
+
+span {
+color : red;
+}
+/*NO RESULTS PAGE END*/
   </style>
 </head>
 <body>
@@ -149,7 +164,9 @@ if ($result->num_rows > 0) {
 
 }
 else {
-  echo "No results found.";
+  echo '<div class="error-container">';
+  echo '<div class="error-heading">No <span>Results</span> Found!</div>';
+  echo "</div>";
 }
 
 $conn->close();
