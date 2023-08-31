@@ -187,3 +187,7 @@ a:hover
     color : white;
     /* text-decoration: underline; */
 }
+
+.watchLater {
+    color : #979797;
+}

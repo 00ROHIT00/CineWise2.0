@@ -192,22 +192,37 @@ if ($result->num_rows > 0) {
      echo '</div>';  
 
      echo '<script>';
-     echo 'document.addEventListener("DOMContentLoaded", function () {
-      const watchLaterButtons = document.querySelectorAll(".watch-later");';
-     echo 'watchLaterButtons.forEach(button => { button.addEventListener("click", addToWatchLater);});';
-     echo 'function addToWatchLater(event) {
-      event.preventDefault();';
-     echo 'const movieCard = event.target.closest(".box-container");';
-     echo 'const movieTitle = movieCard.querySelector(".movie-title").textContent;';
-     echo 'const movieData = {
-      title: movieTitle };';
-     echo 'let watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];';
-     echo 'watchLaterList.push(movieData);';
-     echo 'localStorage.setItem("watchLater", JSON.stringify(watchLaterList));';
-     echo 'alert("Movie added to Watch Later");';
-     echo 'button.removeEventListener("click", addToWatchLater);';
-     echo '}';
-     echo '});';
+    echo 'document.addEventListener("DOMContentLoaded", function () {
+      const watchLaterButtons = document.querySelectorAll(".watch-later");
+  
+      watchLaterButtons.forEach(button => {
+          button.addEventListener("click", function () {
+              addToWatchLater(button); // Pass the button element to the function
+          });
+      });
+  
+      function addToWatchLater(button) {
+          const movieCard = button.closest(".box-container");
+          const movieTitle = movieCard.querySelector(".movie-title").textContent;
+  
+          const movieData = {
+              title: movieTitle
+          };
+  
+          let watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];
+  
+         
+          watchLaterList.push(movieData);
+  
+         
+          localStorage.setItem("watchLater", JSON.stringify(watchLaterList));
+  
+          alert("Movie added to Watch Later");
+  
+         
+          button.removeEventListener("click", addToWatchLater);
+      }
+  });';
      echo '</script>';
 }
  

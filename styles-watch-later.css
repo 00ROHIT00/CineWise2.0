@@ -21,8 +21,8 @@
 }
 
 button {
-  color: red;
-  background-color: white;
+  color: white;
+  background : transparent;
   font-family: 'Poppins' , sans-serif;
   position: absolute;
   top: 10px;
@@ -30,8 +30,7 @@ button {
   height: 35px;
   background: transparent;
   border: white 2px solid;
-  padding: 3px;
-  background-color: white;
+  padding: 7px;
   transition: .3s ease-in-out;
   -webkit-transition: .3s ease-in-out;
   -moz-transition: .3s ease-in-out;
@@ -39,8 +38,24 @@ button {
   -o-transition: .3s ease-in-out;
 }
 button:hover {
-   border : red 2px solid;
-   cursor: pointer
+   border : white 2px solid;
+   color : red;
 }
+.backArrow {
+  position: absolute;
+  top : 13px;
+  left : 10px;
+  font-size : 25px;
+  transition: .2s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  -moz-transition: .2s ease-in-out;
+  -ms-transition: .2s ease-in-out;
+  -o-transition: .2s ease-in-out;
+}
+
+.backArrow:hover {
+ transform : scale(110%);
+}
+
 
 
