@@ -48,7 +48,7 @@ body {
 
 .container {
   height: 100vh;
-  background-color : #100c05;
+  background-color : #0c1216;
   background-size: 400% 400%;
   animation: bgAnimation 20s ease-in-out infinite;
   -webkit-animation: bgAnimation 20s ease-in-out infinite;
@@ -65,7 +65,7 @@ body {
   /* border: lime 2px solid; */
   width: 400px;
   height: 450px;
-  background-color:#3d5151;
+  background-color:#213e52;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
