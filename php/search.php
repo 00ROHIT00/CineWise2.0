@@ -169,7 +169,7 @@ if($conn ->connect_error)
 
 $searchInput = $_POST['searchInput'];
 $lowerCaseSearchInput = strtolower($_POST['searchInput']);
-$query = "SELECT * FROM moviedata WHERE movieName like '%$lowerCaseSearchInput%' OR genre like '%$lowerCaseSearchInput%'";
+$query = "SELECT * FROM moviedata WHERE movieName like '%$lowerCaseSearchInput%' OR genre like '%$lowerCaseSearchInput%' OR releaseYear like '%$lowerCaseSearchInput%'";
 $result = $conn->query($query);
 
 if ($result->num_rows > 0) {

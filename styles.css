@@ -7,13 +7,17 @@
 }
 html{
     scroll-behavior: smooth;
-}
-::-webkit-scrollbar {
-    display : none;
+    /* scroll-snap-type: y mandatory;
+    overflow-y: scroll; */
 }
 body{
     color :#e3d1d1;         
+    
 } 
+/* section {
+    scroll-snap-align: start;
+    height: 100vh;
+} */
 .container
 {
     height :100vh;
@@ -144,7 +148,6 @@ a {
     font-size : 33px;
     display : grid;
     place-items: center;
-    padding-top : 15px;
 
     background-clip: text;
     -webkit-background-clip: text;
@@ -157,10 +160,37 @@ a {
     -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-
   border-bottom: #979797 4px solid;
 }
-
+.container2 h3 {
+    border-top: #979797 2px solid;
+    font-family: 'Poppins' ,sans-serif;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 15px;
+    text-decoration: underline;
+    margin-top : 35px;
+}
+.faqbox {
+    display : grid;
+    place-items: center;
+}
+.faq {
+    font-family : 'Poppins', sans-serif;
+    display : flex;
+    font-size : 17px;
+    padding : 5px;
+    width : 1300px;
+}
+.right {
+    border-left : #979797 2px solid;
+    padding-left : 15px;
+    width : 55%;
+   }
+.left {
+    width : 45%;
+    padding-right : 2px;
+}
 /* NAVBAR */
 .navbar {
     font-family: 'Poppins', sans-serif;
@@ -191,3 +221,67 @@ a:hover
 .watchLater {
     color : #979797;
 }
+
+
+.cw-intro {
+    font-family: 'Poppins', sans-serif;
+    padding : 15px;
+    font-size : 17px;
+}
+
+span {
+    font-size : 20px;
+}
+
+
+ /*ABOUT US PAGE*/
+ .container3 {
+    height :100vh;
+    background-color : rgba(0,0,0,0.6); 
+    font-family : 'Poppins', sans-serif;
+    text-align : center;
+    padding-top : 5px;
+}
+
+.container3 nav {
+    border-top : 4px #979797 solid;
+}
+ .container3 h1 {
+    font-size : 45px;
+ }
+ .container3 p,h3 {
+    padding-left : 10px;
+    padding-right : 10px;
+ }
+
+ .container3 h3 {
+    text-decoration: underline;
+ }
+ /*contact us page*/
+
+ .container4 {
+    height :100vh;
+    background-color : rgba(0,0,0,0.6); 
+    font-family : 'Poppins', sans-serif;
+    text-align : center;
+    padding-top : 5px;
+}
+
+.container4 nav {
+    border-top : 4px #979797 solid;
+}
+ .container4 h1 {
+    font-size : 45px;
+ }
+
+ .container4 p {
+    padding-left : 10px;
+    padding-right : 10px;
+ }
+
+ .container4 span {
+    text-decoration: underline;
+    font-size : 20px;
+ }
+
+

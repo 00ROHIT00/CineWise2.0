@@ -3,6 +3,7 @@
 margin : 0;
 padding : 0;                     
 box-sizing: border-box;
+overflow-y: hidden;
   }
 
   body {
@@ -25,9 +26,9 @@ box-sizing: border-box;
   justify-content: space-around;
 }
 .container {
-height : 525px;         
+/* height : 525px;          */
           /*1366x768res*/
-/* height : 624px;        */
+height : 624px;       
             /*1920x1080res*/
 display : flex;
 justify-content: center;
