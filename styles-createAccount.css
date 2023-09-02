@@ -48,7 +48,7 @@ body {
 
 .container {
   height: 100vh;
-  background-color : #0c1216;
+  background-color : #0F2027;
   background-size: 400% 400%;
   animation: bgAnimation 20s ease-in-out infinite;
   -webkit-animation: bgAnimation 20s ease-in-out infinite;
@@ -65,14 +65,13 @@ body {
   /* border: lime 2px solid; */
   width: 400px;
   height: 450px;
-  background-color:#213e52;
+  background-color: #2C5364;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   padding : 15px;
-  box-shadow: -5px 5px 23px -3px #9cc5c5;
   /*MAKINGTHETEXTUNSELECTABLE*/-webkit-user-select: none;
   /*Safari*/-ms-user-select: none;
   /*IE10andIE11*/user-select: none;
