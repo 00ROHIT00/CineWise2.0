@@ -211,18 +211,31 @@ if ($result->num_rows > 0) {
   
           let watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];
   
-         
-          watchLaterList.push(movieData);
-  
-         
-          localStorage.setItem("watchLater", JSON.stringify(watchLaterList));
-  
-          alert("Movie added to Watch Later");
-  
-         
-          button.removeEventListener("click", addToWatchLater);
+          // Check if the movie title already exists in the watchLaterList
+          if (!watchLaterList.some(item => item.title === movieTitle)) {
+              watchLaterList.push(movieData);
+              localStorage.setItem("watchLater", JSON.stringify(watchLaterList));
+              button.disabled = true; // Disable the button after adding to Watch Later
+          } else {
+              console.log("Movie is already in Watch Later");
+          }
       }
-  });';
+  
+      // Display the "Movie added to Watch Later" alert once after all buttons have been processed
+      const watchLaterAlert = document.getElementById("watchLaterAlert");
+      if (watchLaterAlert) {
+          watchLaterAlert.style.display = "none"; // Hide the alert initially
+      }
+  
+      const watchLaterButton = document.getElementById("watchLaterButton");
+      if (watchLaterButton) {
+          watchLaterButton.addEventListener("click", function () {
+              watchLaterAlert.style.display = "block"; // Display the alert when the "Watch Later" list is shown
+          });
+      }
+  });
+  
+  ';
      echo '</script>';
 }
  
