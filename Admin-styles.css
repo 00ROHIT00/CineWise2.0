@@ -109,7 +109,7 @@ border : #9f2323 2px solid;
   width : 538px;
 }
 
-#releaseYear {
+ #releaseYear {
   /* Disable default arrow styles */
   -moz-appearance: textfield; /* Firefox */
 }

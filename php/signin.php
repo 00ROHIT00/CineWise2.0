@@ -19,13 +19,16 @@ $query = "SELECT * FROM customerdata WHERE username = '$username' AND password =
 $result = $conn->query($query);
 
 if ($result->num_rows == 1) {
- 
+  session_start();
+  $_SESSION['userName'] = $username;
+  session_write_close();
   echo '<script>alert("Login Successfull!")</script>';
-  header('Location: http://localhost/CineWise2.0/index.html');
+  header('Location: http://localhost/CineWise2.0/index.php');
   exit;
 } else {
   
   echo '<script>alert("Invalid Information!")</script>';
+
 }
 
 $conn->close();

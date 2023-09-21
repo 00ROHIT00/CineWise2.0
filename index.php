@@ -13,6 +13,14 @@
         <link rel="icon" type="images/x-icon" href="./assets/favicon.ico">    <!--FAVICON ICON-->
     </head>
     <body>
+        <?php
+        session_start();
+        if(isset($_SESSION['userName'])) {
+            echo "The user is signed in!";
+        } else {
+            echo "Please Log in";
+        }
+        ?>
         <div class="mainbox">
 
 
