@@ -13,14 +13,6 @@
         <link rel="icon" type="images/x-icon" href="./assets/favicon.ico">    <!--FAVICON ICON-->
     </head>
     <body>
-        <?php
-        session_start();
-        if(isset($_SESSION['userName'])) {
-            echo "The user is signed in!";
-        } else {
-            echo "Please Log in";
-        }
-        ?>
         <div class="mainbox">
 
 
@@ -47,15 +39,32 @@
                     <h1>CineWise</h1>
                 </div>
                 <div class="navbar">
-                    <nav>
-                        <ul>
-                            <li><a href="#homePage"><b>Home</b></a></li>
-                            <li><a href="#AboutUs"><b>About Us</b></a></li>
-                            <li><a href="#ContactUs"><b>Contact</b></a></li>
-                            <li><a href="http://localhost/cinewise2.0/signin.html" target="blank" id="signinButton"><b>Sign In</b></a></li>
-                            <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
-                        </ul>
-                    </nav>
+                            <?php
+                    session_start();
+                    if(isset($_SESSION['userName'])) {
+                        echo "<script>console.log('Second Page : User Is Signed In!');</script>";
+                        echo '
+                        <nav> <ul>
+                        <li><a href="#homePage"><b>Home</b></a></li>
+                        <li><a href="#AboutUs"><b>About Us</b></a></li>
+                        <li><a href="#ContactUs"><b>Contact</b></a></li>
+                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
+                        <li><a href="./php/logout.php" class="logoutBtn"><b>Log Out</b></a></li>
+                        </ul> </nav>
+                        ';
+                    } else {
+                        echo "<script>console.log('Second Page : User Is Not Signed In!');</script>";
+                        echo '
+                        <nav> <ul>
+                        <li><a href="#homePage"><b>Home</b></a></li>
+                        <li><a href="#AboutUs"><b>About Us</b></a></li>
+                        <li><a href="#ContactUs"><b>Contact</b></a></li>
+                        <li><a href="http://localhost/cinewise2.0/signin.html" target="blank" id="signinButton"><b>Sign In</b></a></li>
+                        </ul> </nav>
+                        ';
+                    }
+                    ?>
+                    
                 </div>
                 <p class="cw-intro">Welcome to <span><b>CineWise</b></span>, your go-to destination for all things movies! With CineWise, finding your favorite films is as easy as pie. Whether you have a specific movie in mind or you're in the mood for a certain genre like action, romance, or comedy, we've got you covered.
                 
@@ -96,14 +105,28 @@
         <section id="AboutUs" class="section">
             <div class="container3">
                 <h1>About Us!</h1>
-                <nav>
-                    <ul>
+                <?php
+                    if(isset($_SESSION['userName'])) {
+                        echo "<script>console.log('Third Page : User Is Signed In!');</script>";
+                        echo '
+                        <nav> <ul>
+                        <li><a href="#homePage"><b>Home</b></a></li>
+                        <li><a href="#ContactUs"><b>Contact</b></a></li>
+                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
+                        <li><a href="./php/logout.php" class="logoutBtn"><b>Log Out</b></a></li>
+                        </ul> </nav>
+                        ';
+                    } else {
+                        echo "<script>console.log('Third Page : User Is Not Signed In!');</script>";
+                        echo '
+                        <nav> <ul>
                         <li><a href="#homePage"><b>Home</b></a></li>
                         <li><a href="#ContactUs"><b>Contact</b></a></li>
                         <li><a href="http://localhost/cinewise2.0/signin.html" target="blank" id="signinButton"><b>Sign In</b></a></li>
-                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
-                    </ul>
-                </nav>
+                        </ul> </nav>
+                        ';
+                    }
+                    ?>
                 <p>Welcome to <span><b>CineWise</b></span>, where our shared love for the magic of cinema fuels our mission to be your ultimate destination for all things related to movies. At CineWise, we understand that movies are more than just a form of entertainment; they are a source of inspiration, a means of escapism, and a reflection of the human experience. Our passion for the world of cinema drives us to provide you with a comprehensive platform that caters to movie enthusiasts of all kinds.</p><br>
 
             <h3>Our Founding Vision</h3>
@@ -128,14 +151,28 @@
         <section id="ContactUs" class="section">
             <div class="container4">
                 <h1>Contact Us!</h1>
-                <nav>
-                    <ul>
+                <?php
+                    if(isset($_SESSION['userName'])) {
+                        echo "<script>console.log('Fourth Page : User Is Signed In!');</script>";
+                        echo '
+                        <nav> <ul>
+                        <li><a href="#homePage"><b>Home</b></a></li>
+                        <li><a href="#AboutUs"><b>About Us</b></a></li>
+                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
+                        <li><a href="./php/logout.php" class="logoutBtn"><b>Log Out</b></a></li>
+                        </ul> </nav>
+                        ';
+                    } else {
+                        echo "<script>console.log('Fourth Page : User Is Not Signed In!');</script>";
+                        echo '
+                        <nav> <ul>
                         <li><a href="#homePage"><b>Home</b></a></li>
                         <li><a href="#AboutUs"><b>About Us</b></a></li>
                         <li><a href="http://localhost/cinewise2.0/signin.html" target="blank" id="signinButton"><b>Sign In</b></a></li>
-                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
-                    </ul>
-                </nav>
+                        </ul> </nav>
+                        ';
+                    }
+                    ?>
                 <p>We value your feedback, questions, and suggestions at CineWise. Our commitment to enhancing your movie experience extends to providing you with excellent customer support and assistance whenever you need it. Feel free to reach out to us using the following contact methods:</p> <br>
                 <p>-> Customer Support Email: <span class="email">support@cinewise.com</span><br>
                     If you encounter any issues while using CineWise, have questions about our services, or need assistance with any aspect of the website, please don't hesitate to email our dedicated customer support team. We strive to respond to your inquiries promptly and provide solutions to ensure your movie-searching journey is seamless.</p> <br>

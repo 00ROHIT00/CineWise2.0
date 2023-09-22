@@ -151,7 +151,7 @@ color : red;
   <h1>Search Results</h1> <br>
  </div>
  <div class="arrow">
-  <a href="http://localhost/CineWise2.0/index.html"> <i class="fa-solid fa-backward" style="color: #ffffff;"></i> </a>
+  <a href="http://localhost/CineWise2.0/index.php"> <i class="fa-solid fa-backward" style="color: #ffffff;"></i> </a>
  </div>
  <div class="container">
 <?php 

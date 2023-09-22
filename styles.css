@@ -222,6 +222,17 @@ a:hover
     color : #979797;
 }
 
+.logoutBtn {
+    transition: .5s ease-in-out all;
+    -webkit-transition: .5s ease-in-out all;
+    -moz-transition: .5s ease-in-out all;
+    -ms-transition: .5s ease-in-out all;
+    -o-transition: .5s ease-in-out all;
+}
+.logoutBtn:hover {
+    color : red;
+}
+
 
 .cw-intro {
     font-family: 'Poppins', sans-serif;
