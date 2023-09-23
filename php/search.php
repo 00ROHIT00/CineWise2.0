@@ -103,7 +103,7 @@ a:hover {
  transform : scale(110%);
 }
 
-.watch-later {
+.watch-later-button {
   background : transparent;
   color : white;
   font-size : 14px;
@@ -112,7 +112,7 @@ a:hover {
   transition : .3s ease-in-out;
 }
 
-.watch-later:hover {
+.watch-later-button:hover {
   background-color : white;
   color : black;
   curson : grab;
@@ -182,7 +182,7 @@ if ($result->num_rows > 0) {
      echo '<nav>';
      echo '<ul>';
      echo '<li><a href="'. $row['link'] .'" target="_blank" class="watch-now">Watch Trailer!</a></li>';
-     echo '<button class="watch-later">Watch Later!</button>';
+     echo '<button class="watch-later-button" data-movie-name="' . $row['movieName'] . '">Watch Later!</button>';
      echo '</ul>';
      echo ' </nav>';
      echo '<div class="footer">';
@@ -191,55 +191,7 @@ if ($result->num_rows > 0) {
      echo '  </div>';
      echo '</div>';  
 
-     echo '<script>';
-    echo 'document.addEventListener("DOMContentLoaded", function () {
-      const watchLaterButtons = document.querySelectorAll(".watch-later");
-  
-      watchLaterButtons.forEach(button => {
-          button.addEventListener("click", function () {
-              addToWatchLater(button); // Pass the button element to the function
-          });
-      });
-  
-      function addToWatchLater(button) {
-          const movieCard = button.closest(".box-container");
-          const movieTitle = movieCard.querySelector(".movie-title").textContent;
-  
-          const movieData = {
-              title: movieTitle
-          };
-  
-          let watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];
-  
-          // Check if the movie title already exists in the watchLaterList
-          if (!watchLaterList.some(item => item.title === movieTitle)) {
-              watchLaterList.push(movieData);
-              localStorage.setItem("watchLater", JSON.stringify(watchLaterList));
-              button.disabled = true; // Disable the button after adding to Watch Later
-          } else {
-              console.log("Movie is already in Watch Later");
-          }
-      }
-  
-      // Display the "Movie added to Watch Later" alert once after all buttons have been processed
-      const watchLaterAlert = document.getElementById("watchLaterAlert");
-      if (watchLaterAlert) {
-          watchLaterAlert.style.display = "none"; // Hide the alert initially
-      }
-  
-      const watchLaterButton = document.getElementById("watchLaterButton");
-      if (watchLaterButton) {
-          watchLaterButton.addEventListener("click", function () {
-              watchLaterAlert.style.display = "block"; // Display the alert when the "Watch Later" list is shown
-          });
-      }
-  });
-  
-  ';
-     echo '</script>';
 }
- 
-
 }
 else {
   echo '<div class="error-container">';
@@ -250,5 +202,35 @@ else {
 $conn->close();
 ?>
  </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const watchLaterButtons = document.querySelectorAll(".watch-later-button");
+
+        watchLaterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        const movieName = button.getAttribute("data-movie-name"); // Change this line
+
+
+                // Send an AJAX request to add the movie to the watch later list
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "./watchlater.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Handle the response, e.g., show a success message
+                        console.log(xhr.responseText);
+
+                        // Optionally, you can provide visual feedback to the user
+                        button.disabled = true;
+                        button.textContent = "Added!";
+                        button.style.backgroundColor = "#ccc";
+                    }
+                };
+                console.log("Movie Name:", movieName);
+xhr.send(`movieName=${movieName}`);
+            });
+        });
+    });
+</script>
 </body>
 </html>
