@@ -48,7 +48,7 @@
                         <li><a href="#homePage"><b>Home</b></a></li>
                         <li><a href="#AboutUs"><b>About Us</b></a></li>
                         <li><a href="#ContactUs"><b>Contact</b></a></li>
-                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
+                        <li><a href="./watch-later.php" class="watchLater"><b>Watch Later List</b></a></li>
                         <li><a href="./php/logout.php" class="logoutBtn"><b>Log Out</b></a></li>
                         </ul> </nav>
                         ';
@@ -112,7 +112,7 @@
                         <nav> <ul>
                         <li><a href="#homePage"><b>Home</b></a></li>
                         <li><a href="#ContactUs"><b>Contact</b></a></li>
-                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
+                        <li><a href="./watch-later.php" class="watchLater"><b>Watch Later List</b></a></li>
                         <li><a href="./php/logout.php" class="logoutBtn"><b>Log Out</b></a></li>
                         </ul> </nav>
                         ';
@@ -158,7 +158,7 @@
                         <nav> <ul>
                         <li><a href="#homePage"><b>Home</b></a></li>
                         <li><a href="#AboutUs"><b>About Us</b></a></li>
-                        <li><a href="./watch-later.html" class="watchLater"><b>Watch Later List</b></a></li>
+                        <li><a href="./watch-later.php" class="watchLater"><b>Watch Later List</b></a></li>
                         <li><a href="./php/logout.php" class="logoutBtn"><b>Log Out</b></a></li>
                         </ul> </nav>
                         ';

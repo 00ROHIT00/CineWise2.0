@@ -223,7 +223,7 @@ $conn->close();
                         // Optionally, you can provide visual feedback to the user
                         button.disabled = true;
                         button.textContent = "Added!";
-                        button.style.backgroundColor = "#ccc";
+                        button.style.backgroundColor = "#0c1216";
                     }
                 };
                 console.log("Movie Name:", movieName);
