@@ -8,7 +8,6 @@ $releaseYear = $_POST['releaseYear'];
 $description = $_POST['description'];
 $link = $_POST['link'];
 
-//Database Connection
 $conn = new mysqli('localhost','root','','cinewise');
 if($conn -> connect_error) {
   echo "$conn -> connect_error";

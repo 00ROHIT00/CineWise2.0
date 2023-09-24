@@ -22,7 +22,6 @@ session_start();
 if (isset($_SESSION['userName'])) {
     $username = $_SESSION['userName'];
 
-    // Establish a database connection
     $host = 'localhost';
     $dbUsername = 'root';
     $dbPassword = '';
@@ -30,12 +29,10 @@ if (isset($_SESSION['userName'])) {
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
-    // Check if the connection was successful
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Retrieve the movies in the user's Watch Later list
     $sql = "SELECT movieName FROM watchlater WHERE username = '$username'";
     $result = $conn->query($sql);
 
@@ -49,7 +46,6 @@ if (isset($_SESSION['userName'])) {
         echo '<h3>Your Watch Later list is empty.</h3>';
     }
 
-    // Close the database connection
     $conn->close();
 } else {
     echo 'User is not signed in.';

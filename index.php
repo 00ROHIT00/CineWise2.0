@@ -33,7 +33,7 @@
         </section>
 
 
-        <sections id="secondPage" class="section">
+        <section id="secondPage" class="section">
             <div class="container2">
                 <div class="cw2">
                     <h1>CineWise</h1>

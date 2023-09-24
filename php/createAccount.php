@@ -17,7 +17,7 @@ if ($conn->connect_error) {
   $stmt->bind_param("sss",$username, $password, $email);
   $execval = $stmt->execute();
   echo $execval;
-  echo '<script>alert("Account Created Successfully! Go back to homepage and sign in")</script>';
+  echo '<script>alert("Account Created Successfully! Go back to homepage and sign in!")</script>';
   $stmt->close();
   $conn->close();
 }

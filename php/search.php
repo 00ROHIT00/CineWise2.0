@@ -171,7 +171,7 @@ $searchInput = $_POST['searchInput'];
 $lowerCaseSearchInput = strtolower($_POST['searchInput']);
 $query = "SELECT * FROM moviedata WHERE movieName like '%$lowerCaseSearchInput%' OR genre like '%$lowerCaseSearchInput%' OR releaseYear like '%$lowerCaseSearchInput%'";
 $result = $conn->query($query);
-
+                                
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
      echo '<div class="box-container">';
@@ -208,19 +208,17 @@ $conn->close();
 
         watchLaterButtons.forEach(button => {
     button.addEventListener("click", function () {
-        const movieName = button.getAttribute("data-movie-name"); // Change this line
+        const movieName = button.getAttribute("data-movie-name"); 
 
 
-                // Send an AJAX request to add the movie to the watch later list
+                // AJAX REQUEST
                 const xhr = new XMLHttpRequest();
                 xhr.open("POST", "./watchlater.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        // Handle the response, e.g., show a success message
+                      
                         console.log(xhr.responseText);
-
-                        // Optionally, you can provide visual feedback to the user
                         button.disabled = true;
                         button.textContent = "Added!";
                         button.style.backgroundColor = "#0c1216";

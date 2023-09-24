@@ -8,8 +8,11 @@
 <body>
   <?php
   session_start();
+  echo "Session Started";
   session_destroy();
+  echo "Session Destroyed";
   header('Location: http://localhost/CineWise2.0/index.php');
+  echo "User Redirected!";
   exit;
   ?>
 </body>

@@ -54,7 +54,11 @@ button:hover {
 }
 
 .backArrow:hover {
- transform : scale(110%);
+ transform: scale(110%);
+ -webkit-transform: scale(110%);
+ -moz-transform: scale(110%);
+ -ms-transform: scale(110%);
+ -o-transform: scale(110%);
 }
 
 

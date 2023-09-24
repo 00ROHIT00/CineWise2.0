@@ -1,7 +1,7 @@
 <?php
 $movieName = $_POST['removeAMovie'];
 $lowerCaseMovie = strtolower($_POST['removeAMovie']); /*MAKES THE INPUT TO LOWERCASE*/
-//database connection
+
 $conn = new mysqli('localhost','root','','cinewise');
 if($conn-> connect_error) {
   echo "$conn -> connect_error";

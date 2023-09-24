@@ -1,5 +1,4 @@
 <?php
-// Establish a database connection (use your own credentials)
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -18,12 +17,10 @@ $query = "SELECT * FROM customerdata WHERE username = '$username' AND password =
 $result = $conn->query($query);
 
 if ($result->num_rows == 1) {
-  // Login successful
   echo '<script>alert("Login Successfull!")</script>';
   header('Location: http://localhost/CineWise2.0/Admin.html');
   exit;
 } else {
-  // Login failed
   echo '<script>alert("Invalid Information!")</script>';
 }
 

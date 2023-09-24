@@ -22,10 +22,10 @@ body {
   background-size: 400% 400%;
   animation: headingAnimation 10s ease infinite;
   -webkit-animation: headingAnimation 10s ease infinite;
-  /*MAKINGTHETEXTUNSELECTABLE*/-webkit-user-select: none;
+  /*MakingTheTextUnselectable*/-webkit-user-select: none;
   /*Safari*/-ms-user-select: none;
   /*IE10andIE11*/user-select: none;
-  /*Standardsyntax*//*border: lime 2px solid;
+  /*Standardsyntax*//*
   */
 }
 @keyframes headingAnimation{
@@ -55,14 +55,12 @@ body {
 }
 
 .box {   /*the div containing the login box*/
-  /* border : lime 2px solid; */
   height : 480px;
   display : grid;
   place-items: center;
 }
   
 .login {
-  /* border: lime 2px solid; */
   width: 400px;
   height: 450px;
   background-color: #2C5364;
@@ -84,7 +82,6 @@ body {
  }
 
  .loginForm {
-  /* border : lime 2px solid; */
   height : 320px;
   display : grid;
   place-items: center;

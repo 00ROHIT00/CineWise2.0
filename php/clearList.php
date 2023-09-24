@@ -17,7 +17,6 @@ session_start();
 if (isset($_SESSION['userName'])) {
     $username = $_SESSION['userName'];
 
-        // Establish a database connection
         $host = 'localhost';
         $dbUsername = 'root';
         $dbPassword = '';
@@ -25,7 +24,7 @@ if (isset($_SESSION['userName'])) {
 
         $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
-        // Check if the connection was successful
+       
         if ($conn->connect_error) {
             die("Connection failed: ");
         }
